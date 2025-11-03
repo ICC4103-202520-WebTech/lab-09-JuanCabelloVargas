@@ -1,0 +1,12 @@
+<div class="container mt-3 mb-3 col-12">
+  <h1>Recipes</h1>
+
+  <%= link_to "New Recipe", new_recipe_path, class: "btn btn-primary mb-3" %>
+  <% if @recipes.any? %>
+    <div class="row">
+      <%= render @recipes %>
+    </div>
+  <% else %>
+    <p class="text-muted">No recipes yer. Create one to get started!</p>
+  <% end %>
+</div>

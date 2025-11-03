@@ -1,0 +1,27 @@
+<div class= "form-group p-2">
+  <%= form_with model: @recipe do |f| %>
+    <div class="col-4 mb-3">
+      <%= f.label :title %>
+      <%=f.text_field :title, placeholder: "Recipe title", class: "form-control" %>
+    </div>
+
+    <div class="col-4 mb-3">
+      <%= f.label :difficulty %>
+      <%= f.text_field :difficulty, placeholder: "Difficulty of the recipe", class: "form-control" %>
+    </div>
+
+    <div class="col-4 mb-3">
+      <%= f.label :cook_time %>
+      <%= f.number_field :cook_time, placeholder: "Cook time of the recipe", class: "form-control"%>
+    </div>
+
+    <div class="col-8 mb-3">
+      <%= f.rich_textarea :content %>
+    </div>
+    
+    <div class="d-flex gap-2">
+      <%= link_to "Back to recipes", recipes_path, class: "btn btn-outline-secondary" %>
+      <%= f.submit "Save", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

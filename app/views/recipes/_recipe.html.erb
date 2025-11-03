@@ -1,0 +1,23 @@
+<div class="card mb-3">
+  <div class="card-body gap-3">
+    <div class="w-100">
+      <div class="justify-content-between align-items-center">
+        <h5 class="card-title mb-1"><%= recipe.title %>
+          <small class="text-muted">
+            <i class="bi bi-clock"></i> <%= recipe.cook_time %>
+          </small>  
+        </div>
+        <p class="mb-2">
+          <span class="badge text-bg-secondary"><%= recipe.difficulty %></span>
+        </p>
+
+        <div class="gap-2">
+          <%= link_to "View Recipe", recipe_path(recipe), class: "btn btn-primary" %>
+          <% if user_signed_in? && recipe.user == current_user %>
+            <%= link_to "Edit Recipe", edit_recipe_path(recipe), class: "btn btn-primary" %>
+            <% end %>
+        </div>
+        
+    </div>
+  </div>
+</div>
